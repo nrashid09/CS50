@@ -1,0 +1,58 @@
+/*
+*
+* Mario.c
+* by Nick Rashid
+* 07/2015
+*
+* Creates a half pyramid of a user-defined height (0>=h<=23) 
+* like that found at the end of Super Mario 1-1
+*
+*/
+
+#include <stdio.h>
+#include <cs50.h> // Library specific to CS50
+
+int main(void)
+{
+
+    // Get the pyramid height "h" from the user;  0>=h<=23.  
+    int h;
+    do
+    {
+        printf("What height, 'h', is Mario's pyramid? 0>=h<=23:"); 
+        h=GetInt();
+    } 
+
+    while (h>23 || h<0);
+    {
+        printf("Height: %d\n", h); 
+    }
+
+
+    // Print the pyramid
+    for(int i = 1; i <= h; i++)
+    {
+        // Prints spaces
+        int s = h-i;
+        while(s>(0)) 
+        {   
+            printf(" ");
+            s--;
+        }
+    
+        // Prints hashes
+        int j = 0;
+        while(j<=i)
+        {
+            printf("#");
+            j++;       
+        }    
+ 
+        // Prints new line
+            printf("\n");
+    }
+}
+
+/* Other methods of accomplishing this problem include just using "For" loops,
+* or using "Break" in place of the "While" loops */ 
+
